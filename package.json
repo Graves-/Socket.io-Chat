@@ -1,0 +1,32 @@
+{
+  "name": "socket-chat-app",
+  "version": "0.0.1",
+  "description": "My first Cocket.io app.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Graves-/Socket.io-Chat.git"
+  },
+  "keywords": [
+    "chat",
+    "application",
+    "socket.io",
+    "nodejs",
+    "npm",
+    "express",
+    "handlebars"
+  ],
+  "author": "Guillermo Ortiz Rebolledo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Graves-/Socket.io-Chat/issues"
+  },
+  "homepage": "https://github.com/Graves-/Socket.io-Chat#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.5.1"
+  }
+}
