@@ -1,10 +1,22 @@
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+var express = require("express");
+var exphbs  = require('express-handlebars');
+var app = express();
+var port = 3700;
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+//EXPRESS
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+//SERVE STATIC CONTENT
+app.use(express.static('public'));
+
+app.get("/", function(req, res){
+    //res.sendFile(__dirname + '/index.html');
+    res.render('home');
 });
+
+var io = require('socket.io').listen(app.listen(port));
+console.log("Listening on port " + port);
 
 io.on('connection', function(socket){
 
@@ -18,8 +30,4 @@ io.on('connection', function(socket){
     io.emit('chat message', msg);
   });
 
-});
-
-http.listen(3000, function(){
-  console.log('listening on *:3000');
 });
