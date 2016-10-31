@@ -2,18 +2,55 @@
 <html>
   <head>
     <title>Socket.IO chat</title>
-    <style>
-      * { margin: 0; padding: 0; box-sizing: border-box; }
-      body { font: 13px Helvetica, Arial; }
-      form { background: #000; padding: 3px; position: fixed; bottom: 0; width: 100%; }
-      form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
-      form button { width: 9%; background: rgb(130, 224, 255); border: none; padding: 10px; }
-      #messages { list-style-type: none; margin: 0; padding: 0; }
-      #messages li { padding: 5px 10px; }
-      #messages li:nth-child(odd) { background: #eee; }
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+
+      body{
+        background-color: #F5DEB3; color: white;
+      }
+
+      form{
+        position: fixed; bottom: 0; width: 100%; margin-bottom: 10px; padding: 10px;
+      }
+
+      form button{
+        width: 100%; background-color: #0F4235; color: white;
+      }
+
+      .msg{
+        background-color: #44E3A6; padding: 5px 20px; margin: 5px; border-radius: 25px;
+      }
+
+      #messages{
+        list-style-type: none; margin: 0; padding: 20px;
+      }
+
+      #messages li:nth-child(odd){
+        background-color: #3A7A83;
+      }
+
+      #send{
+        cursor: pointer;
+        background-color: #0F4235;
+        color: white;
+      }
+
+      .timestamp{
+        font-size: 10pt;
+        background-color: transparent;
+        color: black;
+        padding-right: 10px;
+        text-align: right;
+      }
+
     </style>
   </head>
   <body>
     {{{body}}}
   </body>
 </html>
+

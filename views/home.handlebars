@@ -1,11 +1,23 @@
-<ul id="messages"></ul>
+<div class="row" id="row_msg">
+  <ul id="messages"></ul>
+</div>
 <form action="">
-  <input id="m" autocomplete="off" /><button>Send</button>
+<div class="row">
+  <div class="col-xs-12">
+      <div class="input-group">
+        <input type="text" class="form-control" autocomplete="off" id="m">
+        <span class="input-group-addon" id="send"><i class="fa fa-paper-plane" aria-hidden="true"></i></span>
+      </div>
+  </div>
+  <div class="col-xs-1">
+      
+  </div>
+</div>
+  
 </form>
 
 
 <script src="/socket.io/socket.io.js"></script>
-<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
 <script>
   window.onload = function() {
 
@@ -16,7 +28,9 @@
         return false;
       });
       socket.on('chat message', function(msg){
-        $('#messages').append($('<li>').text(msg));
+        var d = new Date();
+        $('#messages').append($('<li class="msg">').text(msg));
+        $('#messages').append($('<li class="timestamp">').text(d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()));
       });
 
   }
